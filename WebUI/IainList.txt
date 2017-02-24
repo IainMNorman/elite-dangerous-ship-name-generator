@@ -1,0 +1,23 @@
+harmless	A
+harmlessly	v
+mostly harmless	A
+poor	A
+below average	A
+average	A
+above average	A
+competent	A
+dangerous	A
+deadly	A
+elite	A
+Acid	NA
+Alert	NA
+Allergy	N
+Animal	NA
+Anti-venom	N
+Antiseptic	NA
+Aquatic	A
+Arboreal	A
+Attentive	A
+Backbone	N
+Ball	N
+Bite	NV
