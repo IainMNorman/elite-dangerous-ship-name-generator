@@ -10,6 +10,7 @@
             <select class="form-control" name="pattern" id="pattern">
                 <option @(ViewBag.Pattern == "T v A N" ? "selected" : "") value="T v A N">The Adverb Adjective Noun</option>
                 <option @(ViewBag.Pattern == "A N" ? "selected" : "") value="A N">Adjective Noun</option>
+                <option @(ViewBag.Pattern == "A N" ? "selected" : "") value="T N">The Noun</option>
             </select>
         </div>
     </div>
@@ -17,15 +18,15 @@
         <label for="limit" class="col-sm-2 control-label">Sanity</label>
         <div class="col-sm-10">
             <select class="form-control" name="limit">
-                <option @(ViewBag.Limit == 0 ? "selected" : "") value="0">0 - Flibble!</option>
+                <option @(ViewBag.Limit == 0 ? "selected" : "") value="0">0 - Kicking the wingmirrors off!</option>
                 <option @(ViewBag.Limit == 1 ? "selected" : "") value="1">1 - Bat Crazy Roy</option>
                 <option @(ViewBag.Limit == 2 ? "selected" : "") value="2">2 - Psykokow Sings!</option>
                 <option @(ViewBag.Limit == 5 ? "selected" : "") value="5">5 - Freakin' Insane</option>
-                <option @(ViewBag.Limit == 10 ? "selected" : "") value="10">10 - Beige Cowboy</option>
-                <option @(ViewBag.Limit == 20 ? "selected" : "") value="20">20 - Kicking the wing mirrors off</option>
-                <option @(ViewBag.Limit == 50 ? "selected" : "") value="50">50 - What is Normal anyway?</option>
-                <option @(ViewBag.Limit == 100 ? "selected" : "") value="100">100 - Boring</option>
-                <option @(ViewBag.Limit == 200 ? "selected" : "") value="200">200 - OMG are you going on about yaw again!</option>
+                <option @(ViewBag.Limit == 10 ? "selected" : "") value="10">10 - The Beige Cowboy</option>
+                <option @(ViewBag.Limit == 20 ? "selected" : "") value="20">20 - Only slightly unhinged</option>
+                <option @(ViewBag.Limit == 50 ? "selected" : "") value="50">50 - Neurotypical?</option>
+                <option @(ViewBag.Limit == 100 ? "selected" : "") value="100">100 - Simply Boring</option>
+                <option @(ViewBag.Limit == 200 ? "selected" : "") value="200">200 - OMG are you going on about PvP again!</option>
 
             </select>
         </div>
