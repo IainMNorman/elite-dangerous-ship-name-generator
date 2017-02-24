@@ -48,6 +48,18 @@ namespace WebUI.Models
         public List<Word> Words;
         private Random random = new Random();
 
+        public List<string> GetNames(List<string> patterns, int limit, bool alliterate = false, int count = 1)
+        {
+            var names = new List<string>();
+
+            for (int i = 0; i < count; i++)
+            {
+                names.Add(GetName(patterns.OrderBy(o => Guid.NewGuid()).First(), limit, alliterate));
+            }
+
+            return names;
+        }
+
         public string GetName(string pattern, int limit, bool alliterate = false)
         {
             var parts = pattern.Split(' ');
@@ -85,10 +97,10 @@ namespace WebUI.Models
             var name = "";
             foreach (var n in nameParts)
             {
-                name += "<a target=\"_blank\" href=\"http://dictionary.reference.com/browse/" + n + "\">" + System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(n) + "</a>&nbsp;";
+                name += System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(n) + " ";
             }
 
-            return name;
+            return name.Substring(0, name.Length -1);
         }
 
         private string GetRandomWord(string part, int limit, bool alliterate = false, string firstLetter = "a")

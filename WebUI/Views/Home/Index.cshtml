@@ -8,9 +8,12 @@
         <label for="pattern" class="col-sm-2 control-label">Pattern</label>
         <div class="col-sm-10">
             <select class="form-control" name="pattern" id="pattern">
-                <option @(ViewBag.Pattern == "T v A N" ? "selected" : "") value="T v A N">The Adverb Adjective Noun</option>
-                <option @(ViewBag.Pattern == "A N" ? "selected" : "") value="A N">Adjective Noun</option>
-                <option @(ViewBag.Pattern == "A N" ? "selected" : "") value="T N">The Noun</option>
+                <option @(ViewBag.Pattern == "T v A N|p" ? "selected" : "") value="T v A N|p">The Adverb Adjective Noun</option>
+                <option @(ViewBag.Pattern == "A N|p" ? "selected" : "") value="A N|p">Adjective Noun</option>
+                <option @(ViewBag.Pattern == "T N|p" ? "selected" : "") value="T N|p">The Noun</option>
+                <option @(ViewBag.Pattern == "V T A N|p" ? "selected" : "") value="V T A N|p">Verb The Adjective Noun</option>
+                <option @(ViewBag.Pattern == "A V" ? "selected" : "") value="A V">Adjective Verb</option>
+                <option @(ViewBag.Pattern == "v A" ? "selected" : "") value="v A">Adverb Adjective</option>
             </select>
         </div>
     </div>
@@ -47,8 +50,11 @@
     </div>
 </form>
 
+@foreach (var name in ViewBag.Names)
+{
+    <div class="generatedname">@name</div>
+}
 
-<div class="generatedname">@Html.Raw(ViewBag.Name)</div>
 <div>
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
         <p>

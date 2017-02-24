@@ -124,7 +124,6 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="mobypos.txt" />
     <Content Include="mobyposf.txt" />
     <Content Include="Scripts\bootstrap-slider.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -149,8 +148,6 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="wordlist2.txt" />
-    <Content Include="wordlist.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\shipnames.pubxml" />
