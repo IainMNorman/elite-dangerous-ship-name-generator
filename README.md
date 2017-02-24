@@ -1,2 +1,5 @@
-# elite-dangerous-ship-name-generator
+# Elite Dangerous Insane Ship Name Generator
 An insane generator for ship names.
+
+Demo: http://shipnames.azurewebsites.net
+
