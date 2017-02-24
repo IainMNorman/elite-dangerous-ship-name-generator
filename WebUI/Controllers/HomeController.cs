@@ -9,20 +9,17 @@ namespace WebUI.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string pattern, int? limit, string alliterate)
+        public ActionResult Index(string pattern = "T v A N", int? limit = 5, bool alliterate = false)
         {
             if (String.IsNullOrWhiteSpace(pattern))
                 pattern = "T v A N";
-
-            if (alliterate == null)
-                alliterate = "false";
 
             if (limit == null)
                 limit = 0; 
 
             var gen = Generator.Instance;
 
-            ViewBag.Name = gen.GetName(pattern, (int)limit, bool.Parse(alliterate));
+            ViewBag.Name = gen.GetName(pattern, (int)limit, alliterate);
             ViewBag.Pattern = pattern;
             ViewBag.Limit = limit;
             ViewBag.Alliterate = alliterate;
