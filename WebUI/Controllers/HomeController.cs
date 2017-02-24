@@ -18,13 +18,9 @@ namespace WebUI.Controllers
                 alliterate = "false";
 
             if (limit == null)
-                limit = 0;
-                
-             
+                limit = 0; 
 
             var gen = Generator.Instance;
-
-            gen.GetName()
 
             ViewBag.Name = gen.GetName(pattern, (int)limit, bool.Parse(alliterate));
             ViewBag.Pattern = pattern;

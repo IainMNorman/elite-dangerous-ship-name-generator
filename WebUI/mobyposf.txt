@@ -43922,7 +43922,6 @@ cow-tongue	h	0
 cowage	N	0
 Cowan	N	1
 cowardice	N	1
-cowardic	Ne	0
 cowardliness	N	0
 cowardly	A	1
 Coward	N	2
