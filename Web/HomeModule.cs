@@ -10,7 +10,10 @@ namespace Web
     {
         public HomeModule()
         {
-            Get["/"] = p => "Hello World";
+            Get[@"/"] = parameters =>
+            {
+                return Response.AsFile("Webroot/index.html", "text/html");
+            };
         }
     }
 }

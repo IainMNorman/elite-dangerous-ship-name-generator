@@ -79,7 +79,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="mobyposf.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

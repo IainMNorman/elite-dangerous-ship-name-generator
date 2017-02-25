@@ -16,8 +16,7 @@ namespace Api
         {
             Get["/name"] = p => GetName();
             Get["/names"] = p => GetNames(10, 5);
-            Get["/names/{count}/{limit}"] = p => GetNames(p.count, p.limit);
-            
+            Get["/names/{count}/{limit}"] = p => GetNames(p.count, p.limit);            
         }
 
         private dynamic GetNames(int count, int limit)
