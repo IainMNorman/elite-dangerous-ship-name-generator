@@ -17,7 +17,7 @@ export class App {
   }
 
   getSingleName() {
-    this.http.fetch('name')
+    this.http.fetch('name/?_t=' + new Date().getTime())
       .then(response => response.json())
       .then(data => {
         this.shipNames.unshift(data);

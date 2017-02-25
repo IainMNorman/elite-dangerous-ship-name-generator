@@ -29,7 +29,7 @@ define('app',['exports', 'aurelia-fetch-client', 'aurelia-framework'], function 
     App.prototype.getSingleName = function getSingleName() {
       var _this = this;
 
-      this.http.fetch('name').then(function (response) {
+      this.http.fetch('name/?_t=' + new Date().getTime()).then(function (response) {
         return response.json();
       }).then(function (data) {
         _this.shipNames.unshift(data);

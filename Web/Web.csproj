@@ -71,29 +71,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="WebRoot\index.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="WebRoot\scripts\app-bundle.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="WebRoot\scripts\vendor-bundle.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="WebRoot\index.html" />
+    <Content Include="WebRoot\scripts\app-bundle.js" />
+    <Content Include="WebRoot\scripts\vendor-bundle.js" />
+    <None Include="Properties\PublishProfiles\isnapi - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="WebRoot\scripts\app-bundle.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="WebRoot\scripts\app-bundle.js.map" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="mobyposf.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="mobyposf.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
