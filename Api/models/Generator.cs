@@ -13,7 +13,7 @@ namespace Api.Models
 
         private Generator()
         {
-            this.Words = new List<Word>();
+            Words = new List<Word>();
             Setup();
         }
 
