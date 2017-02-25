@@ -22,6 +22,7 @@ namespace Api
 
         private dynamic GetNames(int count, int limit)
         {
+            if (count > 50) count = 50;
             return Response.AsJson(gen.GetNames(patterns, limit, false, count));
         }
 
