@@ -105,9 +105,11 @@ namespace Api.Models
 
         private string GetRandomWord(string part, int limit, bool alliterate = false, string firstLetter = "a")
         {
+            if (part == "T") return "The";
+
             IEnumerable<Word> possibleWords;
 
-            if (alliterate && part != "T")
+            if (alliterate)
             {
                 possibleWords = Words.Where(w => 
                     w.Parts.Contains(part) 
@@ -120,8 +122,8 @@ namespace Api.Models
                 possibleWords = Words.Where(w => w.Parts.Contains(part) && w.Frequency >= limit);
             }
 
-            if (possibleWords.Count() == 0) return "";
-            return possibleWords.ElementAt(random.Next(0, possibleWords.Count())).Phrase;
+            if (!possibleWords.Any()) return "";
+            return possibleWords.OrderBy(o => Guid.NewGuid()).First().Phrase;
         }
 
         private string GetRandomWordAnd(List<string> parts, int limit, bool alliterate = false, string firstLetter = "a")
@@ -143,7 +145,7 @@ namespace Api.Models
 
 
 
-            if (possibleWords.Count() == 0) return "";
+            if (!possibleWords.Any()) return "";
             return possibleWords.ElementAt(random.Next(0, possibleWords.Count())).Phrase;
         }
 
@@ -163,7 +165,7 @@ namespace Api.Models
                 possibleWords = Words.Where(w => parts.Any(a => w.Parts.Contains(a) && w.Frequency >= limit));
             }
 
-            if (possibleWords.Count() == 0) return "";
+            if (!possibleWords.Any()) return "";
             return possibleWords.ElementAt(random.Next(0, possibleWords.Count())).Phrase;
         }
     }

@@ -14,7 +14,14 @@ namespace Api
 
         public ApiModule() : base("/api")
         {
-            Get["/name"] = parameters => GetName();
+            Get["/name"] = p => GetName();
+            Get["/names"] = p => GetNames(10);
+            Get["/names/{count}"] = p => GetNames(p.count);
+        }
+
+        private dynamic GetNames(int count)
+        {
+            return Response.AsJson(gen.GetNames(patterns, 5, false, count));
         }
 
         private object GetName()
