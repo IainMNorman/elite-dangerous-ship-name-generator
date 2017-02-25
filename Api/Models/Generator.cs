@@ -11,9 +11,14 @@ namespace Api.Models
         private static volatile Generator instance;
         private static object syncRoot = new Object();
 
+        private List<Word> Words;
+        private List<Word> SaneWords;
+        private Random random = new Random();
+
         private Generator()
         {
             Words = new List<Word>();
+            SaneWords = new List<Word>();
             Setup();
         }
 
@@ -45,11 +50,10 @@ namespace Api.Models
             }
         }
 
-        public List<Word> Words;
-        private Random random = new Random();
 
         public List<string> GetNames(List<string> patterns, int limit, bool alliterate = false, int count = 1)
         {
+            SaneWords = Words.Where(w => w.Frequency >= limit).ToList();
             var names = new List<string>();
 
             for (int i = 0; i < count; i++)
@@ -60,7 +64,7 @@ namespace Api.Models
             return names;
         }
 
-        public string GetName(string pattern, int limit, bool alliterate = false)
+        private string GetName(string pattern, int limit, bool alliterate = false)
         {
             var parts = pattern.Split(' ');
             var nameParts = new string[parts.Length];
@@ -111,7 +115,7 @@ namespace Api.Models
 
             if (alliterate)
             {
-                possibleWords = Words.Where(w => 
+                possibleWords = SaneWords.Where(w => 
                     w.Parts.Contains(part) 
                     && w.Frequency >= limit 
                     && w.Phrase.ToLower().StartsWith(firstLetter)
@@ -119,7 +123,7 @@ namespace Api.Models
             }
             else
             {
-                possibleWords = Words.Where(w => w.Parts.Contains(part) && w.Frequency >= limit);
+                possibleWords = SaneWords.Where(w => w.Parts.Contains(part) && w.Frequency >= limit);
             }
 
             if (!possibleWords.Any()) return "";
@@ -132,7 +136,7 @@ namespace Api.Models
 
             if (alliterate)
             {
-                possibleWords = Words.Where(w =>
+                possibleWords = SaneWords.Where(w =>
                     parts.All(a => w.Parts.Contains(a)
                     && w.Frequency >= limit
                     && w.Phrase.ToLower().StartsWith(firstLetter))
@@ -140,7 +144,7 @@ namespace Api.Models
             }
             else
             {
-                possibleWords = Words.Where(w => parts.All(a => w.Parts.Contains(a) && w.Frequency >= limit));
+                possibleWords = SaneWords.Where(w => parts.All(a => w.Parts.Contains(a) && w.Frequency >= limit));
             }
 
 
@@ -154,7 +158,7 @@ namespace Api.Models
             IEnumerable<Word> possibleWords;
             if (alliterate)
             {
-                possibleWords = Words.Where(w =>
+                possibleWords = SaneWords.Where(w =>
                     parts.Any(a => w.Parts.Contains(a)
                     && w.Frequency >= limit
                     && w.Phrase.ToLower().StartsWith(firstLetter))
@@ -162,7 +166,7 @@ namespace Api.Models
             }
             else
             {
-                possibleWords = Words.Where(w => parts.Any(a => w.Parts.Contains(a) && w.Frequency >= limit));
+                possibleWords = SaneWords.Where(w => parts.Any(a => w.Parts.Contains(a) && w.Frequency >= limit));
             }
 
             if (!possibleWords.Any()) return "";

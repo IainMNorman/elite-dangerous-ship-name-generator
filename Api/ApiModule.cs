@@ -15,13 +15,14 @@ namespace Api
         public ApiModule() : base("/api")
         {
             Get["/name"] = p => GetName();
-            Get["/names"] = p => GetNames(10);
-            Get["/names/{count}"] = p => GetNames(p.count);
+            Get["/names"] = p => GetNames(10, 5);
+            Get["/names/{count}/{limit}"] = p => GetNames(p.count, p.limit);
+            
         }
 
-        private dynamic GetNames(int count)
+        private dynamic GetNames(int count, int limit)
         {
-            return Response.AsJson(gen.GetNames(patterns, 5, false, count));
+            return Response.AsJson(gen.GetNames(patterns, limit, false, count));
         }
 
         private object GetName()
