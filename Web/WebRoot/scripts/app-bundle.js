@@ -1,9 +1,10 @@
-define('app',['exports'], function (exports) {
+define('app',['exports', 'aurelia-fetch-client', 'aurelia-framework'], function (exports, _aureliaFetchClient, _aureliaFramework) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
+  exports.App = undefined;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -11,11 +12,32 @@ define('app',['exports'], function (exports) {
     }
   }
 
-  var App = exports.App = function App() {
-    _classCallCheck(this, App);
+  var _dec, _class;
 
-    this.message = 'Hello World!';
-  };
+  var App = exports.App = (_dec = (0, _aureliaFramework.inject)(_aureliaFetchClient.HttpClient), _dec(_class = function () {
+    function App(http) {
+      _classCallCheck(this, App);
+
+      http.configure(function (config) {
+        config.withBaseUrl('/api/');
+      });
+      this.http = http;
+      this.shipNames = [];
+      this.getSingleName();
+    }
+
+    App.prototype.getSingleName = function getSingleName() {
+      var _this = this;
+
+      this.http.fetch('name').then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        _this.shipNames.unshift(data);
+      });
+    };
+
+    return App;
+  }()) || _class);
 });
 define('environment',["exports"], function (exports) {
   "use strict";
@@ -75,5 +97,5 @@ define('resources/index',["exports"], function (exports) {
   exports.configure = configure;
   function configure(config) {}
 });
-define('text!app.html', ['module'], function(module) { module.exports = "<template><h1>${message}</h1></template>"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template><button click.delegate=\"getSingleName()\">new</button><h1 repeat.for=\"name of shipNames\">${name}</h1></template>"; });
 //# sourceMappingURL=app-bundle.js.map

@@ -1,3 +1,4 @@
 <template>
-  <h1>${message}</h1>
+  <button click.delegate="getSingleName()">new</button>
+  <h1 repeat.for="name of shipNames">${name}</h1>
 </template>
