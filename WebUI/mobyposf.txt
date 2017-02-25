@@ -1,8 +1,5 @@
 the	T	61847
 3-D	AN	0
-4-F	N	0
-4-H'er	N	0
-4-H	A	0
 A battery	h	0
 a bon march	v	0
 a cappella	Av	0
@@ -28,7 +25,6 @@ a vinculo matrimonii	h	0
 a vol	h	0
 a'	A	0
 A-1	N	0
-A-axis	N	0
 A-bomb	N	0
 A-frame	N	0
 A-line	NA	0
@@ -42,9 +38,6 @@ A/P	N	0
 A/V	N	0
 A1c	N	0
 A1	A	0
-AAAA	N	0
-AAAL	N	0
-AAAS	N	0
 AAA	N	1
 Aaberg	N	0
 Aachen	N	1
@@ -6915,8 +6908,7 @@ anacoluthically	v	0
 anacoluthic	A	0
 anacoluthon	N	0
 anacoluttha	p	0
-anaconda	N	0
-Anaconda	N	0
+anaconda	N	200
 Anacortes	N	0
 Anacostia River	h	0
 Anacostia	N	0
@@ -37632,7 +37624,7 @@ coble	N	0
 cobnut	N	0
 COBOL	N	0
 cobra de capello	h	0
-cobra	N	3
+cobra	N	200
 Coburg	N	1
 coburg	N	0
 cobweb houseleek	h	0
@@ -58575,8 +58567,7 @@ eaglestone	N	0
 Eagleton Village	h	0
 eaglet	N	0
 eaglewood	N	0
-Eagle	N	0
-eagle	N	18
+eagle	N	0
 eagling	V	0
 eagre	N	0
 Eakins	N	0
@@ -60633,7 +60624,7 @@ Elissa	N	0
 Elis	N	0
 Elita	N	0
 Elite Guard	h	0
-elite	NA	1
+elite	NA	0
 elitism	N	1
 elitist	N	2
 elixir	N	1
@@ -225301,7 +225292,7 @@ viperishly	v	0
 viperish	A	0
 viperously	v	0
 viperous	A	0
-viper	N	1
+viper	N	0
 Vipul	N	0
 VIP	N	0
 Viquelia	N	0
