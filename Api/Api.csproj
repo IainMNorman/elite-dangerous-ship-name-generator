@@ -84,8 +84,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiModule.cs" />
-    <Compile Include="models\Generator.cs" />
-    <Compile Include="models\Word.cs" />
+    <Compile Include="Models\Generator.cs" />
+    <Compile Include="Models\Word.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
