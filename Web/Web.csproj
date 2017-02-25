@@ -71,16 +71,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="WebRoot\index.html" />
-    <Content Include="WebRoot\scripts\app-bundle.js" />
-    <Content Include="WebRoot\scripts\vendor-bundle.js" />
+    <Content Include="WebRoot\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WebRoot\scripts\app-bundle.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WebRoot\scripts\vendor-bundle.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="WebRoot\scripts\app-bundle.js.map" />
+    <Content Include="WebRoot\scripts\app-bundle.js.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="mobyposf.txt" />
