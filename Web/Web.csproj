@@ -91,7 +91,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="mobyposf.txt" />
+    <Content Include="mobyposf.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
