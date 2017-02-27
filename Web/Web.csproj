@@ -82,6 +82,8 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="WebRoot\scripts\app-bundle.js.map" />
+    <Content Include="WebRoot\fonts\eurostile-webfont.woff" />
+    <Content Include="WebRoot\fonts\eurostile-webfont.woff2" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="mobyposf.txt" />
