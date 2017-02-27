@@ -1,0 +1,51 @@
+$orange: #f07b05;
+@import 'reset';
+body {
+    font-family: "eurostile", sans-serif;
+    padding: 50px;
+    background: black;
+    color: white; 
+    line-height: 400%;   
+}
+
+#namelist {
+    div {
+        &:first-child {
+            h3 {
+                color: $orange;
+                font-size: 42px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                margin-bottom: 20px;
+            }
+        }
+        &:not(:first-child) {
+            h3 {
+                color: silver;
+                font-size: 28px;
+            }
+        }
+    }
+    h3 {
+        font-weight: normal;
+    }
+}
+
+button {
+    background: none;
+    color: $orange;
+    border: 2px solid $orange;
+    outline: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    font-family: "eurostile", sans-serif;
+}
+
+#loading {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+}

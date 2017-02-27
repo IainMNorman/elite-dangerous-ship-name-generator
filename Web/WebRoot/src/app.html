@@ -1,0 +1,27 @@
+<template>
+  <require from="app.css"></require>
+  <div class="container text-center">
+    <div if.bind="showOptions">
+      <h2>Settings</h2>
+      <input type="text" value.bind="patterns" />
+      <input type="checkbox" checked.bind="alliterate" />
+      <select value.two-way="limit">
+        <option value="0">0 - Flibble!</option>
+        <option value="1">1 - Bat Crazy Roy</option>
+        <option value="2">2 - Psykokow Sings!</option>
+        <option value="5">5 - Freakin' Insane (default)</option>
+        <option value="10">10 - Unhinged</option>
+        <option value="20">20 - Feeling Better</option>
+        <option value="50">50 - What is Normal anyway?</option>
+        <option value="100">100 - Boring</option>
+        <option value="200">200 - OMG are you going on about Yaw again!</option>
+    </select>
+    </div>
+    
+    <div id="namelist">
+      <div repeat.for="name of shipNames">
+        <h3>${name}</h3>
+        <button if.bind="$index == 0" click.delegate="getSingleName()">Generate Shipname</button>
+      </div>
+    </div>
+</template>
