@@ -29,7 +29,15 @@ export class App {
   }
 
   handleKeyInput = (event) => {
-    if (event.code == 'KeyB' && event.ctrlKey) { this.showOptions = !this.showOptions; }
+    if (event.code == 'KeyB' && event.ctrlKey) {
+      this.showOptions = !this.showOptions;
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Options',
+        eventAction: 'toggle',
+        eventLabel: 'Toggle options'
+      });
+    }
   }
 
   getSingleName() {
@@ -47,6 +55,13 @@ export class App {
           this.shipNames.unshift(data);
         }
       });
+
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Names',
+      eventAction: 'request',
+      eventLabel: 'Name request'
+    });
   }
 
 }
