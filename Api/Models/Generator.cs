@@ -51,20 +51,20 @@ namespace Api.Models
         }
 
 
-        public List<string> GetNames(List<string> patterns, int limit, bool alliterate = false, int count = 1)
+        public List<string> GetNames(List<string> patterns, int length, int limit, bool alliterate = false, int count = 1)
         {
             SaneWords = Words.Where(w => w.Frequency >= limit).ToList();
             var names = new List<string>();
 
             for (int i = 0; i < count; i++)
             {
-                names.Add(GetName(patterns.OrderBy(o => Guid.NewGuid()).First(), limit, alliterate));
+                names.Add(GetName(patterns.OrderBy(o => Guid.NewGuid()).First(), length, limit, alliterate));
             }
 
             return names;
         }
 
-        private string GetName(string pattern, int limit, bool alliterate = false)
+        private string GetName(string pattern, int length, int limit, bool alliterate = false)
         {
             var parts = pattern.Split(' ');
             var nameParts = new string[parts.Length];
@@ -104,7 +104,14 @@ namespace Api.Models
                 name += System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(n) + " ";
             }
 
-            return name.Substring(0, name.Length -1);
+            name = name.Substring(0, name.Length - 1);
+
+            if (name.Length > length)
+            {
+                name = GetName(pattern, length, limit, alliterate);
+            }
+
+            return name;
         }
 
         private string GetRandomWord(string part, int limit, bool alliterate = false, string firstLetter = "a")
@@ -115,9 +122,9 @@ namespace Api.Models
 
             if (alliterate)
             {
-                possibleWords = SaneWords.Where(w => 
-                    w.Parts.Contains(part) 
-                    && w.Frequency >= limit 
+                possibleWords = SaneWords.Where(w =>
+                    w.Parts.Contains(part)
+                    && w.Frequency >= limit
                     && w.Phrase.ToLower().StartsWith(firstLetter)
                     );
             }
