@@ -5,9 +5,10 @@ import { inject } from 'aurelia-framework';
 export class App {
 
   shipNames = [];
-  patterns = ['T v A N|p', 'A N|p', 'T N|p', 'V T A N|p', 'A V', 'V A', 'T N [of] N'];
-  limit = 5;
+  patterns = ['v A N', 'T v A N', 'A N', 'T N', 'V T A N', 'A V', 'V A', 'T N [of] N'];
+  limit = 4;
   count = 1;
+  length = 22;
   alliterate = false;
   showOptions = false;
 
@@ -42,7 +43,7 @@ export class App {
 
   getSingleName() {
 
-    this.http.fetch(`names/${this.count}/${this.limit}/${this.alliterate}/${this.patterns}/?_t=${new Date().getTime()}`)
+    this.http.fetch(`names/${this.count}/${this.length}/${this.limit}/${this.alliterate}/${this.patterns}/?_t=${new Date().getTime()}`)
       .then(response => response.json())
       .then(data => {
 

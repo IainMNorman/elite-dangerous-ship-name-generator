@@ -13,15 +13,15 @@ namespace Api
 
         public ApiModule() : base("/api")
         {
-            Get["/names"] = p => GetNames(10, 5, false, "T v A N|p,A N|p,T N|p,V T A N|p,A V,V A");
-            Get["/names/{count}/{limit}/{alliterate}/{patterns}"] = p => GetNames(p.count, p.limit, p.alliterate, p.patterns);
+            Get["/names"] = p => GetNames(10, 22, 5, false, "T v A N,A N,T N,V T A N,A V,V A");
+            Get["/names/{count}/{length}/{limit}/{alliterate}/{patterns}"] = p => GetNames(p.count, p.length, p.limit, p.alliterate, p.patterns);
         }
 
-        private dynamic GetNames(int count, int limit, bool alliterate, string patterns)
+        private dynamic GetNames(int count, int length, int limit, bool alliterate, string patterns)
         {
             if (count > 50) count = 50;
             var patternsSplit = patterns.Split(',').ToList();
-            return Response.AsJson(gen.GetNames(patternsSplit, limit, alliterate, count));
+            return Response.AsJson(gen.GetNames(patternsSplit, length, limit, alliterate, count));
         }
     }
 }

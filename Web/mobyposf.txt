@@ -165502,11 +165502,8 @@ rapacity	N	0
 Rapacki	N	0
 Rapallo	N	0
 rape oil	h	0
-raped	V	6
 rapeoil	N	0
 rapeseed	N	0
-Rape	N	0
-rape	NV	20
 Raphaela	N	0
 Raphael	N	2
 raphe	N	0
