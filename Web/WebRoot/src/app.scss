@@ -49,3 +49,13 @@ button {
   right: 10px;
   text-align: right;
 }
+
+.footer {
+  position: fixed;
+  bottom: 10px; right: 30px;
+  color: silver;
+
+  a {
+    color: silver;
+  }
+}
