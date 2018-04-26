@@ -18,7 +18,7 @@ export class App {
         .withBaseUrl('/api/');
     });
     this.http = http;
-    this.getSingleName();
+    //this.getSingleName();
   }
 
   activate() {

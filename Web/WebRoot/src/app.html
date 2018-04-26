@@ -17,11 +17,13 @@
         <option value="200">200 - OMG are you going on about Yaw again!</option>
     </select>
     </div>
-    
+    <button click.delegate="getSingleName()">Generate Shipname</button>
     <div id="namelist">
       <div repeat.for="name of shipNames">
-        <h3>${name}</h3>
-        <button if.bind="$index == 0" click.delegate="getSingleName()">Generate Shipname</button>
+        <h3>${name}</h3>        
       </div>
+    </div>
+    <div class="footer">
+      Made with &hearts; of the game by <a href="http://iainmnorman.com">Iain M Norman</a>
     </div>
 </template>
